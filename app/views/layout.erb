@@ -7,6 +7,8 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat+Subrayada|Permanent+Marker|Sedgwick+Ave+Display|Zilla+Slab+Highlight" rel="stylesheet">
+
   <!--
     application.css is where you put your styles
   -->
@@ -15,9 +17,31 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Beautiful and Meaningful</title>
 </head>
 <body>
+  <h1 class="header-h1">#basic_calendar</h1>
+
+  <nav>
+    <ul class="nav">
+      <li><a href="/">home</a></li> |
+      <!-- if there is a current user logged in, display username, link to add a restaurant, and a logout button -->
+      <% if current_user %>
+        <li><a href="/users/<%= current_user.id %>"> <%= current_user.username %></a></li> |
+        <li><a href="/restaurants/new">add restaurant</a></li> |
+        <li><form class="logout-button" method="post" action="/sessions">
+            <input type="hidden" name="_method" value="DELETE" />
+            <input type="submit" value="logout" id="logout-button">
+          </form></li>
+      <% else %>
+      <!-- if there is no user logged in, display a login and register link -->
+        <li><a href="/sessions/new">login</a></li> |
+        <li><a href="/users/new">register</a></li>
+      <% end %>
+     </ul>
+  </nav>
+  <!-- display errors partial on all pages where error may exist -->
+   <%= erb :'/_errors', layout: false %>
   <%= yield %>
 </body>
 </html>
