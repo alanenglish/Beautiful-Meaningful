@@ -3,3 +3,124 @@ font-family: 'Sedgwick Ave Display', cursive;
 font-family: 'Dancing Script', cursive;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Montserrat Subrayada', sans-serif;*/
+body {
+  margin: 50px auto;
+  max-width: 900px;
+  background-color:#f6f6f6;
+}
+
+#header-h1 {
+  display: inline;
+  font-weight: 700;
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 79px;
+}
+
+.error-messages {
+  margin: 0px auto;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  width: 450px;
+}
+
+nav {
+  float: right;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+nav ul{
+  font-family: 'Permanent Marker', cursive;
+  list-style-type: none;
+  line-height: 15px;
+  text-transform: lowercase;
+}
+
+nav li{
+  display: inline-block;
+  padding-right: 3px;
+}
+
+nav li a{
+  color: black;
+  text-decoration: none;
+}
+
+nav li a:hover{
+  font-style: italic;
+  color: red;
+}
+
+nav li #logout-button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+#login-message, #password-text, #email-text {
+  font-family: 'Dancing Script', cursive;
+}
+
+#login-button {
+  font-family: 'Dancing Script', cursive;
+  background-color: red;
+  border-radius: 10px;
+}
+
+#or-message {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+
+.sm-container{
+  margin: 0 auto;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 100px;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.sm-container h1, h2, h3, h4, h6{
+  text-align: center;
+}
+
+.sm-container a {
+  color: black;
+  text-decoration: none;
+}
+
+.sm-container p {
+  text-align: center;
+  font-size: 20px;
+}
+
+.sm-container a:visited {
+  color: black;
+}
+
+.sm-container a:hover {
+  color: #5c429e;
+  font-style: italic;
+}
+
+.sm-container form{
+  text-align: center;
+}
+
+.sm-container form label{
+  display: block;
+  padding: 5px;
+}
+
+.sm-container form input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 7px;
+}

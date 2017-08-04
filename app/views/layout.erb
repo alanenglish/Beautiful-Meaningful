@@ -20,7 +20,7 @@
   <title>Beautiful and Meaningful</title>
 </head>
 <body>
-  <h1 class="header-h1">#basic_calendar</h1>
+  <h1 id="header-h1">#basic_calendar</h1>
 
   <nav>
     <ul class="nav">
@@ -28,14 +28,14 @@
       <!-- if there is a current user logged in, display username, link to add a restaurant, and a logout button -->
       <% if current_user %>
         <li><a href="/users/<%= current_user.id %>"> <%= current_user.username %></a></li> |
-        <li><a href="/restaurants/new">add restaurant</a></li> |
+        <li><a href="/restaurants/new">add event</a></li> |
         <li><form class="logout-button" method="post" action="/sessions">
             <input type="hidden" name="_method" value="DELETE" />
             <input type="submit" value="logout" id="logout-button">
           </form></li>
       <% else %>
       <!-- if there is no user logged in, display a login and register link -->
-        <li><a href="/sessions/new">login</a></li> |
+        <!-- <li><a href="/sessions/new">login</a></li> | -->
         <li><a href="/users/new">register</a></li>
       <% end %>
      </ul>
@@ -43,5 +43,11 @@
   <!-- display errors partial on all pages where error may exist -->
    <%= erb :'/_errors', layout: false %>
   <%= yield %>
+  <div>
+    <% if !current_user %>
+    <%= erb :'sessions/_new_session' %>
+      <p id="or-message">OR</p>
+    <% end %>
+  </div>
 </body>
 </html>
